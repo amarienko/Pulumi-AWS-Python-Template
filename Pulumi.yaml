@@ -1,0 +1,26 @@
+# https://www.pulumi.com/blog/how-to-create-and-share-a-pulumi-template/
+# https://www.pulumi.com/docs/iac/concepts/projects/project-file/
+name: ${PROJECT}
+description: ${DESCRIPTION}
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv
+    typechecker: mypy
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: pulumi-aws-python-boto3
+template:
+  description: A minimal Pulumi AWS Python with Boto3 Template
+  important: true
+  config:
+    aws:region:
+      description: The AWS region to deploy into
+      default: us-east-1
+      # secret: true
+  metadata:
+    cloud: aws
+options:
+  refresh: always

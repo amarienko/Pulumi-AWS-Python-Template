@@ -1,0 +1,5 @@
+pulumi>=3.160.0,<4.0.0
+pulumi-aws>=6.70.0,<7.0.0
+pulumi-awsx>=2.20.0,<3.0.0
+boto3>=1.35.0
+botocore>=1.35.0
