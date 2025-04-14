@@ -26,16 +26,16 @@ This command will walk you through creating a new Pulumi project.
 Enter a value or leave blank to accept the (default), and press <ENTER>.
 Press ^C at any time to quit.
 
-Project name (route53): aws-route53 
-Project description (A minimal Pulumi AWS Python with Boto3 Template): AWS Route53 Zone 
+Project name (route53): aws-route53
+Project description (A minimal Pulumi AWS Python with Boto3 Template): AWS Route53 Zone
 Created project 'aws-route53'
 
 Please enter your desired stack name.
 To create a stack in an organization, use the format <org-name>/<stack-name> (e.g. `acmecorp/dev`).
-Stack name (dev): prod 
+Stack name (dev): prod
 Created stack 'prod'
 
-The AWS region to deploy into (aws:region) (us-east-1): ca-central-1 
+The AWS region to deploy into (aws:region) (us-east-1): ca-central-1
 Saved config
 
 Installing dependencies...
