@@ -1,5 +1,8 @@
 <p align="left">
+  <a href="https://www.pulumi.com/product/infrastructure-as-code/" alt="Pulumi">
+    <img src="https://img.shields.io/badge/pulumi-%3E%3D3.160-blue"/></a>
   <a href="https://opensource.org/licenses/MIT" alt="License">
+    <img src="https://img.shields.io/github/license/amarienko/Pulumi-AWS-Python-Template?color=yellow"/></a>
 </p>
 
 # Pulumi-AWS-Python-Template
