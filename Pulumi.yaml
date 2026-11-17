@@ -1,26 +1,47 @@
-# https://www.pulumi.com/blog/how-to-create-and-share-a-pulumi-template/
-# https://www.pulumi.com/docs/iac/concepts/projects/project-file/
+# .SYNOPSIS
+#   Pulumi AWS Python Provider with Boto3 Support
+#
+# .RESOURCES
+#   https://www.pulumi.com/blog/how-to-create-and-share-a-pulumi-template/
+#   https://www.pulumi.com/docs/iac/concepts/projects/project-file/
+#   https://www.pulumi.com/docs/iac/concepts/config/
+#   https://www.pulumi.com/registry/packages/aws/api-docs/provider/
+#   https://www.pulumi.com/registry/packages/awsx/api-docs/provider/
 name: ${PROJECT}
 description: ${DESCRIPTION}
 runtime:
   name: python
   options:
-    toolchain: pip
-    virtualenv: venv
+    toolchain: uv
+    virtualenv: .venv
     typechecker: mypy
+main: __main__.py
+license: MIT
 config:
+  # format: [<namespace>:]<key-name>, when a key name is used without a colon, Pulumi
+  # uses the current project name from Pulumi.yaml as the namespace.
+  # if [value] if ommited when setting a configuration key, the CLI prompts for it
+  # interactively. [value] required for project-level structured config.
+  aws:region:
+    value: us-east-1
   pulumi:tags:
     value:
       pulumi:template: pulumi-aws-python-boto3
+      pulumi:provider: pulumi-aws
 template:
-  description: A minimal Pulumi AWS Python with Boto3 Template
+  displayName: Pulumi AWS Python Template with Boto3 Support
+  description: A minimal Pulumi AWS Python project with Boto3 Support
   important: true
   config:
+    # stack's configuration settings
     aws:region:
       description: The AWS region to deploy into
       default: us-east-1
-      # secret: true
+      type: string
+      secret: false
   metadata:
     cloud: aws
+    version: 1.0.3
 options:
   refresh: always
+requiredPulumiVersion: ">=3.275.0"

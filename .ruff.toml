@@ -1,0 +1,34 @@
+exclude = [
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "build",
+    "dist",
+    "site-packages",
+    "__pycache__",
+]
+
+line-length = 88
+indent-width = 4
+
+[lint]
+ignore = ["FLY002", "N999", "UP030", "UP032", "UP036"]
+
+[format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[lint.flake8-bugbear]
+extend-immutable-calls = ["pydantic.Field"]
+
+[lint.isort]
+lines-between-types = 0
+no-lines-before = ["local-folder"]
