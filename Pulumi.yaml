@@ -15,7 +15,6 @@ runtime:
     toolchain: uv
     virtualenv: .venv
     typechecker: mypy
-main: __main__.py
 license: MIT
 config:
   # format: [<namespace>:]<key-name>, when a key name is used without a colon, Pulumi
@@ -41,7 +40,7 @@ template:
       secret: false
   metadata:
     cloud: aws
-    version: 1.0.3
+    version: 1.0.4
 options:
   refresh: always
 requiredPulumiVersion: ">=3.275.0"

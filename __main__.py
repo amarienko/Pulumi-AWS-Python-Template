@@ -1,5 +1,7 @@
 """Main AWS Pulumi IaC (Python) Program."""
 
+from __future__ import annotations
+
 import os
 import sys
 from pathlib import Path
@@ -7,7 +9,7 @@ from pathlib import Path
 import boto3  # noqa: F401 retained for future use
 from botocore.exceptions import ClientError  # noqa: F401 retained for future use
 import pulumi_aws as aws
-import pulumi_awsx as awsx
+import pulumi_awsx as awsx  # noqa: F401 retained for future use
 from pulumi import (
     Config,
     ConfigMissingError,
